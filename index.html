@@ -174,9 +174,11 @@
     </button>
     <nav class="side-menu" id="sideMenu">
       <ul>
-          <li class="menu-title">Direct Access</li>
+          <li class="menu-title">Hotkeys</li>
 
           <li><a href="#windows-hotkeys"><i class="fa-brands fa-windows"></i> Windows</a></li>
+          <li><a href="#whatsapp-hotkeys"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
+
         <li><a href="#discord"><i class="fa-brands fa-discord"></i> Discord</a></li>
         <li><a href="#pycharm"><i class="fa-solid fa-code"></i> PyCharm</a></li>
         <li><a href="#vscode"><i class="fa-solid fa-terminal"></i> VS Code</a></li>
@@ -191,6 +193,10 @@
           <a href="#chatgpt"><i class="fa-solid fa-code"></i> ChatGPT</a>
         </li>
         <li><a href="#blender"><i class="fa-solid fa-sync"></i> Blender</a></li>
+          <li class="menu-title">Commands</li>
+          <li><a href="#windows-cmd-commands"><i class="fa-solid fa-terminal"></i> CMD/PS Windows commands</a></li>
+          <li><a href="#dev-commands"><i class="fa-solid fa-terminal"></i> CMD/PS Dev Commands</a></li>
+          <li class="menu-title">About</li>
         <li><a href="#creditsabout"><i class="fa-solid fa-plus"></i> Credits/About</a></li>
       </ul>
     </nav>
@@ -234,7 +240,33 @@
             <li><span class="hotkey">Win + R</span>Open Run dialog</li>
             <li><span class="hotkey">Win + X</span>Open Quick Link menu (power user menu)</li>
         </ul>
-        
+
+        <h2 id="whatsapp-hotkeys"><i class="fa-brands fa-whatsapp"></i> WhatsApp Desktop/Web Hotkeys</h2>
+        <ul>
+            <li class="note"><b>Basic Navigation</b></li>
+            <li><span class="hotkey">Ctrl + N</span>Start a new chat</li>
+            <li><span class="hotkey">Ctrl + Shift + ]</span>Next chat</li>
+            <li><span class="hotkey">Ctrl + Shift + [</span>Previous chat</li>
+            <li><span class="hotkey">Ctrl + Shift + =</span>Zoom in</li>
+            <li><span class="hotkey">Ctrl + -</span>Zoom out</li>
+            <li class="note"><b>Chat & Message Actions</b></li>
+            <li><span class="hotkey">Ctrl + F</span>Search within chat</li>
+            <li><span class="hotkey">Ctrl + Shift + M</span>Mute chat</li>
+            <li><span class="hotkey">Ctrl + E</span>Archive chat</li>
+            <li><span class="hotkey">Ctrl + Shift + U</span>Mark as unread</li>
+            <li><span class="hotkey">Ctrl + Backspace</span>Delete chat</li>
+            <li class="note"><b>App Navigation</b></li>
+            <li><span class="hotkey">Ctrl + P</span>Open profile/settings</li>
+            <li><span class="hotkey">Ctrl + ,</span>App settings</li>
+            <li><span class="hotkey">Ctrl + Shift + N</span>Create new group</li>
+            <li><span class="hotkey">Ctrl + Tab</span>Next open chat</li>
+            <li><span class="hotkey">Ctrl + Shift + Tab</span>Previous open chat</li>
+            <li class="note"><b>Messaging</b></li>
+            <li><span class="hotkey">Enter</span>Send message</li>
+            <li><span class="hotkey">Shift + Enter</span>New line in message</li>
+            <li><span class="hotkey">Ctrl + Shift + \</span>Open emoji panel</li>
+        </ul>
+
         <h2 id="discord"><i class="fa-brands fa-discord"></i> Discord (Windows)</h2>
         <ul>
             <li><span class="hotkey">Ctrl + /</span> Show Keyboard Shortcuts</li>
@@ -587,6 +619,179 @@
             <li><span class="hotkey">Shift + Space</span>Play Animation / Toggle Fullscreen Editor</li>
             <li><span class="hotkey">F3 / Spacebar</span>Search Menu (find operators)</li>
         </ul>
+        <h1>Commands(Windows)-</h1>
+        <h2 id="windows-cmd-commands"><i class="fa-solid fa-terminal"></i> Windows PowerShell / CMD Commands</h2>
+        <ul>
+          <li class="note"><b>System Info & Management</b></li>
+
+          <li>
+            <span class="hotkey">ipconfig</span> Show IP and network config
+            <ul>
+              <li><span class="hotkey">ipconfig /all</span> Show detailed network info</li>
+              <li><span class="hotkey">ipconfig /release</span> Release current IP address</li>
+              <li><span class="hotkey">ipconfig /renew</span> Renew IP address</li>
+              <li><span class="hotkey">ipconfig /flushdns</span> Flush DNS resolver cache</li>
+              <li><span class="hotkey">ipconfig /displaydns</span> Display DNS resolver cache</li>
+            </ul>
+          </li>
+
+          <li>
+            <span class="hotkey">ping &lt;address&gt;</span> Check network connectivity
+            <ul>
+              <li><span class="hotkey">ping -t &lt;address&gt;</span> Ping continuously until stopped</li>
+              <li><span class="hotkey">ping -n &lt;count&gt; &lt;address&gt;</span> Ping with a specific number of requests</li>
+            </ul>
+          </li>
+
+          <li>
+            <span class="hotkey">tracert &lt;address&gt;</span> Trace route to address
+          </li>
+
+          <li>
+            <span class="hotkey">netstat</span> Show network stats and connections
+            <ul>
+              <li><span class="hotkey">netstat -a</span> Show all active connections and listening ports</li>
+              <li><span class="hotkey">netstat -n</span> Show addresses and ports numerically</li>
+              <li><span class="hotkey">netstat -o</span> Show owning process ID for each connection</li>
+              <li><span class="hotkey">netstat -ano</span> Show all with process IDs</li>
+            </ul>
+          </li>
+
+          <li class="note"><b>File & Disk Commands</b></li>
+
+          <li>
+            <span class="hotkey">dir</span> List files & folders
+            <ul>
+              <li><span class="hotkey">dir /p</span> List files one page at a time</li>
+              <li><span class="hotkey">dir /w</span> List files in wide format</li>
+              <li><span class="hotkey">dir /a</span> List all files including hidden</li>
+            </ul>
+          </li>
+
+          <li>
+            <span class="hotkey">chkdsk</span> Check disk for errors
+            <ul>
+              <li><span class="hotkey">chkdsk /f</span> Fix errors on the disk</li>
+              <li><span class="hotkey">chkdsk /r</span> Locate bad sectors and recover readable info</li>
+            </ul>
+          </li>
+
+          <li class="note"><b>System Utilities</b></li>
+
+          <li>
+            <span class="hotkey">sfc /scannow</span> Scan and repair system files
+          </li>
+
+          <li>
+            <span class="hotkey">msconfig</span> Open system configuration
+          </li>
+
+          <li>
+            <span class="hotkey">regedit</span> Open Registry Editor
+          </li>
+
+          <li>
+            <span class="hotkey">control</span> Open Control Panel
+          </li>
+
+          <li class="note"><b>Package & Software Management</b></li>
+
+          <li>
+            <span class="hotkey">winget search &lt;app&gt;</span> Search apps with Windows Package Manager
+          </li>
+
+          <li>
+            <span class="hotkey">winget install &lt;app&gt;</span> Install app via winget
+          </li>
+
+          <li>
+            <span class="hotkey">winget upgrade</span> Upgrade installed apps
+          </li>
+
+        </ul>
+
+        <h2 id="dev-commands"><i class="fa-solid fa-laptop-code"></i> Dev Commands (Git, Node.js, Python)</h2>
+        <ul>
+
+          <li class="note"><b>Git Commands</b></li>
+
+          <li>
+            <span class="hotkey">git clone &lt;repo-url&gt;</span> Clone a remote repository
+          </li>
+
+          <li>
+            <span class="hotkey">git status</span> Check current repo status
+          </li>
+
+          <li>
+            <span class="hotkey">git add &lt;file&gt;</span> Stage changes for commit
+          </li>
+
+          <li>
+            <span class="hotkey">git commit -m "message"</span> Commit staged changes with message
+          </li>
+
+          <li>
+            <span class="hotkey">git push</span> Push commits to remote
+          </li>
+
+          <li>
+            <span class="hotkey">git pull</span> Pull latest changes from remote
+          </li>
+
+          <li>
+            <span class="hotkey">git branch</span> List branches
+            <ul>
+              <li><span class="hotkey">git branch &lt;name&gt;</span> Create new branch</li>
+              <li><span class="hotkey">git checkout &lt;branch&gt;</span> Switch branch</li>
+              <li><span class="hotkey">git merge &lt;branch&gt;</span> Merge branch into current</li>
+            </ul>
+          </li>
+
+          <li class="note"><b>Node.js & npm</b></li>
+
+          <li>
+            <span class="hotkey">node --version</span> Check Node.js version
+          </li>
+
+          <li>
+            <span class="hotkey">npm init</span> Initialize new npm project
+          </li>
+
+          <li>
+            <span class="hotkey">npm install &lt;package&gt;</span> Install package locally
+            <ul>
+              <li><span class="hotkey">npm install -g &lt;package&gt;</span> Install package globally</li>
+              <li><span class="hotkey">npm uninstall &lt;package&gt;</span> Remove package</li>
+              <li><span class="hotkey">npm update</span> Update all packages</li>
+            </ul>
+          </li>
+
+          <li>
+            <span class="hotkey">npm run &lt;script&gt;</span> Run script defined in package.json
+          </li>
+
+          <li class="note"><b>Python</b></li>
+
+          <li>
+            <span class="hotkey">python --version</span> Show Python version
+          </li>
+
+          <li>
+            <span class="hotkey">python &lt;script.py&gt;</span> Run Python script
+          </li>
+
+          <li>
+            <span class="hotkey">pip install &lt;package&gt;</span> Install Python package
+            <ul>
+              <li><span class="hotkey">pip uninstall &lt;package&gt;</span> Uninstall package</li>
+              <li><span class="hotkey">pip list</span> List installed packages</li>
+            </ul>
+          </li>
+
+        </ul>
+
+
         <h2 id="creditsabout"><i class="fa-solid fa-terminal"></i> Credits/About</h2>
         <ul>
             <li>This site has NO connections with all the listed sites,the icons are from Font Awesome,not official for the listed sites.</li>
@@ -604,6 +809,8 @@
             <li><a href="https://docs.microsoft.com/windows-server/administration/windows-commands/cmd" target="_blank"><i class="fa-solid fa-terminal"></i> CMD/PS</a></li>
             <li><a href="https://chat.openai.com" target="_blank"><i class="fa-solid fa-code"></i> ChatGPT</a></li>
             <li><a href="https://www.blender.org" target="_blank"><i class="fa-solid fa-sync"></i> Blender</a></li>
+            <li><a href="https://www.youtube.com/@noahliNotFound?sub_confirmation=1" target="_blank"><i class="fa-solid fa-laugh"></i> Don't Click This!😈</a></li>
+            <li></li>
         </ul>
 
     </div>
