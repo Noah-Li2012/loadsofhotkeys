@@ -48,18 +48,6 @@
             color: #2d6cdf;
             border-left: 4px solid #2d6cdf;
         }
-        body.dark-mode .side-menu {
-            background: #23272a;
-            border-right: 1px solid #333;
-        }
-        body.dark-mode .side-menu a {
-            color: #e0e0e0;
-        }
-        body.dark-mode .side-menu a.active, body.dark-mode .side-menu a:hover {
-            background: #1a2332;
-            color: #8ab4f8;
-            border-left: 4px solid #8ab4f8;
-        }
         .container {
             max-width: 800px;
             margin: 40px auto;
@@ -100,7 +88,6 @@
             color: #888;
             font-size: 0.95em;
         }
-        /* Search bar styles */
         .search-bar {
             display: flex;
             justify-content: center;
@@ -118,45 +105,9 @@
         .search-bar input:focus {
             border: 1.5px solid #2d6cdf;
         }
-        /* Dark mode styles */
-        body.dark-mode {
-            background: #181a1b;
-            color: #e0e0e0;
-        }
-        body.dark-mode .container {
-            background: #23272a;
-            color: #e0e0e0;
-        }
-        body.dark-mode h2 {
-            color: #b3c6ff;
-        }
-        body.dark-mode .hotkey {
-            color: #8ab4f8;
-        }
-        body.dark-mode .note {
-            color: #aaa;
-        }
-        body.dark-mode li {
-            border-bottom: 1px solid #333;
-        }
         /* Toggle button */
         .toggle-mode-btn {
-            position: absolute;
-            top: 24px;
-            right: 32px;
-            background: #eee;
-            color: #222;
-            border: none;
-            border-radius: 20px;
-            padding: 8px 18px;
-            font-size: 1em;
-            cursor: pointer;
-            transition: background 0.2s, color 0.2s;
-        }
-        .toggle-mode-btn.dark {
-            background: #23272a;
-            color: #e0e0e0;
-            border: 1px solid #444;
+            display: none; /* Hide the dark mode button */
         }
         .menu-title {
           padding: 16px 32px;
@@ -165,39 +116,37 @@
           color: #777;
           cursor: default;
         }
-
+        .top-bar {
+            display: none; /* Hide the top bar since it only had dark mode */
+        }
+        /* Remove all dark mode styles */
     </style>
 </head>
 <body>
-    <button class="toggle-mode-btn" id="toggleModeBtn" title="Toggle dark/light mode">
-        <i class="fa-solid fa-moon"></i> Dark Mode
-    </button>
     <nav class="side-menu" id="sideMenu">
       <ul>
           <li class="menu-title">Hotkeys</li>
-
           <li><a href="#windows-hotkeys"><i class="fa-brands fa-windows"></i> Windows</a></li>
           <li><a href="#whatsapp-hotkeys"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
-
-        <li><a href="#discord"><i class="fa-brands fa-discord"></i> Discord</a></li>
-        <li><a href="#pycharm"><i class="fa-solid fa-code"></i> PyCharm</a></li>
-        <li><a href="#vscode"><i class="fa-solid fa-terminal"></i> VS Code</a></li>
-        <li><a href="#chrome"><i class="fa-brands fa-chrome"></i> Chrome</a></li>
-        <li><a href="#edge"><i class="fa-brands fa-edge"></i> Edge</a></li>
-        <li><a href="#firefox"><i class="fa-brands fa-firefox-browser"></i> Firefox</a></li>
-        <li><a href="#opera"><i class="fa-brands fa-opera"></i> Opera</a></li>
-        <li><a href="#github"><i class="fa-brands fa-github"></i> GitHub</a></li>
-        <li><a href="#youtube"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
-        <li><a href="#cmd"><i class="fa-solid fa-terminal"></i> CMD/PS</a></li>
-        <li>
-          <a href="#chatgpt"><i class="fa-solid fa-code"></i> ChatGPT</a>
-        </li>
-        <li><a href="#blender"><i class="fa-solid fa-sync"></i> Blender</a></li>
+          <li><a href="#discord"><i class="fa-brands fa-discord"></i> Discord</a></li>
+          <li><a href="#pycharm"><i class="fa-solid fa-code"></i> PyCharm</a></li>
+          <li><a href="#vscode"><i class="fa-solid fa-terminal"></i> VS Code</a></li>
+          <li><a href="#chrome"><i class="fa-brands fa-chrome"></i> Chrome</a></li>
+          <li><a href="#edge"><i class="fa-brands fa-edge"></i> Edge</a></li>
+          <li><a href="#firefox"><i class="fa-brands fa-firefox-browser"></i> Firefox</a></li>
+          <li><a href="#opera"><i class="fa-brands fa-opera"></i> Opera</a></li>
+          <li><a href="#github"><i class="fa-brands fa-github"></i> GitHub</a></li>
+          <li><a href="#youtube"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
+          <li><a href="#cmd"><i class="fa-solid fa-terminal"></i> CMD/PS</a></li>
+          <li>
+            <a href="#chatgpt"><i class="fa-solid fa-code"></i> ChatGPT</a>
+          </li>
+          <li><a href="#blender"><i class="fa-solid fa-sync"></i> Blender</a></li>
           <li class="menu-title">Commands</li>
           <li><a href="#windows-cmd-commands"><i class="fa-solid fa-terminal"></i> CMD/PS Windows commands</a></li>
           <li><a href="#dev-commands"><i class="fa-solid fa-terminal"></i> CMD/PS Dev Commands</a></li>
           <li class="menu-title">About</li>
-        <li><a href="#creditsabout"><i class="fa-solid fa-plus"></i> Credits/About</a></li>
+          <li><a href="#creditsabout"><i class="fa-solid fa-plus"></i> Credits/About</a></li>
       </ul>
     </nav>
     <div class="container">
@@ -205,7 +154,7 @@
         <div class="search-bar">
             <input type="text" id="hotkeySearch" placeholder="Search hotkeys... (e.g. 'screenshot', 'Ctrl + D', 'YouTube')" />
         </div>
-        
+
         <!-- Windows 10 & 11 Hotkeys -->
         <h2 id="windows-hotkeys"><i class="fa-brands fa-windows"></i> Windows 10 & 11 Hotkeys</h2>
         <ul>
@@ -285,7 +234,7 @@
             <li><span class="hotkey">Ctrl + Shift + Up/Down Arrow</span> Jump between unread channels</li>
         </ul>
 
-        
+
         <h2 id="pycharm"><i class="fa-solid fa-code"></i> PyCharm (Windows)</h2>
         <ul>
             <li><span class="hotkey">Ctrl + Shift + A</span> Find Action (search commands)</li>
@@ -308,7 +257,7 @@
             <li><span class="hotkey">Ctrl + Shift + E</span> Recently edited files popup</li>
         </ul>
 
-        
+
         <h2 id="vscode"><i class="fa-solid fa-terminal"></i> VS Code (Windows)</h2>
         <ul>
             <li><span class="hotkey">Ctrl + P</span> Quick open file</li>
@@ -328,7 +277,7 @@
             <li><span class="hotkey">Ctrl + Space</span> Trigger suggestion</li>
         </ul>
 
-        
+
         <h2 id="chrome"><i class="fa-brands fa-chrome"></i> Google Chrome (Windows)</h2>
         <ul>
             <li><span class="hotkey">Ctrl + T</span> New Tab</li>
@@ -358,7 +307,7 @@
             <li><span class="hotkey">Ctrl + ]</span> Go to next panel</li>
         </ul>
 
-        
+
         <h2 id="edge"><i class="fa-brands fa-edge"></i> Microsoft Edge (Windows)</h2>
         <ul>
             <li class="note">Same as Chrome (since it’s Chromium-based)</li>
@@ -814,64 +763,27 @@
         </ul>
 
     </div>
+
     <script>
-        // Dark/Light mode toggle
-        const toggleBtn = document.getElementById('toggleModeBtn');
-        function setMode(dark) {
-            if (dark) {
-                document.body.classList.add('dark-mode');
-                toggleBtn.classList.add('dark');
-                toggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i> Light Mode';
-                localStorage.setItem('hotkeyDarkMode', '1');
-            } else {
-                document.body.classList.remove('dark-mode');
-                toggleBtn.classList.remove('dark');
-                toggleBtn.innerHTML = '<i class="fa-solid fa-moon"></i> Dark Mode';
-                localStorage.setItem('hotkeyDarkMode', '0');
-            }
-        }
-        // Load mode from localStorage
-        setMode(localStorage.getItem('hotkeyDarkMode') === '1');
-        toggleBtn.onclick = () => setMode(!document.body.classList.contains('dark-mode'));
-
-        // Search/filter hotkeys
-        const searchInput = document.getElementById('hotkeySearch');
-        searchInput.addEventListener('input', function() {
-            const query = this.value.trim().toLowerCase();
-            // For each <ul> in .container
-            document.querySelectorAll('.container ul').forEach(ul => {
-                let anyVisible = false;
-                ul.querySelectorAll('li').forEach(li => {
-                    // Always show section notes
-                    if (li.classList.contains('note')) {
-                        li.style.display = '';
-                        return;
-                    }
-                    // Check if hotkey or description matches
-                    const text = li.textContent.toLowerCase();
-                    if (query === '' || text.includes(query)) {
-                        li.style.display = '';
-                        anyVisible = true;
-                    } else {
-                        li.style.display = 'none';
-                    }
-                });
-                // Hide whole section if no li is visible except notes
-                const visibleLis = Array.from(ul.querySelectorAll('li')).filter(li => li.style.display !== 'none' && !li.classList.contains('note'));
-                ul.style.display = (visibleLis.length === 0) ? 'none' : '';
-            });
-            // Optionally, hide h2 if its ul is hidden
-            document.querySelectorAll('.container h2').forEach(h2 => {
-                const nextUl = h2.nextElementSibling;
-                if (nextUl && nextUl.tagName === 'UL') {
-                    h2.style.display = (nextUl.style.display === 'none') ? 'none' : '';
-                }
-            });
-        });
-
         // Side menu highlight on scroll
         const sectionIds = [
-          'windows-hotkeys','discord','pycharm','vscode','chrome','edge','firefox','opera','github','youtube','cmd','chatgpt','blender'
+            'windows-hotkeys',
+            'whatsapp-hotkeys',
+            'discord',
+            'pycharm',
+            'vscode',
+            'chrome',
+            'edge',
+            'firefox',
+            'opera',
+            'github',
+            'youtube',
+            'cmd',
+            'chatgpt',
+            'blender',
+            'windows-cmd-commands',
+            'dev-commands',
+            'creditsabout'
         ];
         const menuLinks = Array.from(document.querySelectorAll('.side-menu a'));
         function highlightMenu() {
